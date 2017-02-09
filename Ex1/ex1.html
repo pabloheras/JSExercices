@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="styleEx1.css" media="screen" />
+    </head>
+    <body>
+        <div class="main">
+            <!-- Part 3,4 -->
+            <p>Type, then alert:</p><br>
+            <input type="text" name="messageAlert" id="textAlert"><br>
+            <br>
+            <p>Type a bit more:</p><br>
+            <textarea rows="5" cols="50" id="textChars" onkeyup="fromTextArea()"></textarea><br>
+        
+            <input type="button" onclick="alert(document.getElementById('textAlert').value); console.log(countChars());" value="Alert!">
+            <br>
+            <!-- Part 5 -->
+            <p>HTML write</p>
+            <input type="button" onclick="document.write(textAlert.value + ' ' + countChars())" value="HTML">
+
+            <!--[if lt IE 7]>
+                <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="#">upgrade your browser</a> to improve your experience.</p>
+            <![endif]-->
+            <p id="showTextArea"></p>
+        </div>
+    </body>
+</html>
+
+<script>
+'use strict';
+
+function countChars(){
+    return document.getElementById("textChars").value.length;
+};
+
+function fromTextArea(){
+    document.getElementById("showTextArea").innerHTML = document.getElementById("textChars").value;
+};
+
+//Part 2
+function loadAlert() {
+   alert("Page loaded");
+};
+
+window.onload = function(){
+    loadAlert();
+};
+
+
+</script>
