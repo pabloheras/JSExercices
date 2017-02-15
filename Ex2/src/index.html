@@ -10,6 +10,7 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" type="text/css" href="style/styleEx2.css" media="screen" />
+        <script src="js/main.js"></script>
     </head>
     <body>
 
@@ -19,31 +20,6 @@
             <li><a id="aboutPage" onclick="loadContent(this.id)">About my AMAZING SPA</a></li>
         </ul>
 
-        <div id="contentDiv">
-
-        </div>
-        
+        <div id="contentDiv"></div>       
     </body>
 </html>
-
-<script>
-    "use strict";
-
-    document.addEventListener("onClick", function(){
-
-    });        
-
-    function loadContent(idClick) {
-        var xhttp = new XMLHttpRequest();
-        xhttp.open("GET", "content/" + idClick + ".html", true);
-
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                document.getElementById("contentDiv").innerHTML = xhttp.responseText;
-            }
-        };
-        
-        xhttp.send();
-    }
-
-</script>
