@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>AMAZING SPA</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" type="text/css" href="style/styleEx2.css" media="screen" />
+    </head>
+    <body>
+
+        <ul>
+            <li><a id="homePage" onclick="loadContent(this.id)">Home</a></li>
+            <li><a id="randomPage" onclick="loadContent(this.id)">Random fun stuff</a></li>
+            <li><a id="aboutPage" onclick="loadContent(this.id)">About my AMAZING SPA</a></li>
+        </ul>
+
+        <div id="contentDiv">
+
+        </div>
+        
+    </body>
+</html>
+
+<script>
+    "use strict";
+
+    document.addEventListener("onClick", function(){
+
+    });        
+
+    function loadContent(idClick) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "content/" + idClick + ".html", true);
+
+        xhttp.onreadystatechange = function() {
+            if (this.readyState == 4 && this.status == 200) {
+                document.getElementById("contentDiv").innerHTML = xhttp.responseText;
+            }
+        };
+        
+        xhttp.send();
+    }
+
+</script>
