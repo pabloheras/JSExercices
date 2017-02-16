@@ -1,3 +1,3 @@
-# Basic JavaScript Exercices
+# Basic JavaScript Exercises
 
 Learning JavaScript ES6
